@@ -9,7 +9,22 @@ from test_framework.test_utils import enable_executor_hook
 
 def even_odd(A: List[int]) -> None:
     # TODO - you fill in here.
-    return
+    next_even = 0
+    next_odd = len(A) - 1
+    # print(len(A))
+    i = 0
+    # import ipdb;ipdb.set_trace()
+    while i < next_odd:
+        if (A[i] % 2 == 0):
+            # print(i, A[i])
+            i += 1
+        else:
+            tmp = A[next_odd]
+            A[next_odd] = A[i]
+            A[i] = tmp
+            # print(i, A[i], next_odd, A[next_odd])
+            next_odd -= 1
+    return A
 
 
 @enable_executor_hook
